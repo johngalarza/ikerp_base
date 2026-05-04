@@ -1,0 +1,28 @@
+// Hide the database manager Odoo branding shown on /web/database/manager
+.o_database_list .text-center > a[href*="odoo.com"],
+.o_database_list .text-center > a[href*="accounts.odoo.com"] {
+    display: none !important;
+}
+
+// Hide any leftover odoo.com promo links inside settings cards
+a[href*="://www.odoo.com"],
+a[href*="://accounts.odoo.com"] {
+    // Keep functional in-app links but hide pure marketing ones in the chrome.
+    &.o_brand_odoo,
+    &[target="_blank"][rel="noreferrer"] {
+        display: none !important;
+    }
+}
+
+// Replace the Odoo "O" loading favicon flicker by hiding the broken image alt text fallback.
+img[src$="/web/static/img/odoo_logo_tiny.png"],
+img[src$="/web/static/img/odoo_logo.svg"],
+img[src$="/web/static/img/odoo_logo_dark.svg"],
+img[src$="/web/static/img/odoo-icon.svg"],
+img[src$="/web/static/img/odoo-icon-192x192.png"],
+img[src$="/web/static/img/odoo-icon-512x512.png"],
+img[src$="/web/static/img/odoo-icon-ios.png"],
+img[src$="/web/static/img/nologo.png"] {
+    content: url("/ikerp_base/static/description/icon.png");
+    object-fit: contain;
+}

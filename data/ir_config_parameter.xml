@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <function model="ir.config_parameter" name="set_param">
+        <value>web.web_app_name</value>
+        <value>IKERP</value>
+    </function>
+</odoo>

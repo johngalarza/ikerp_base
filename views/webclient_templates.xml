@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Default page <title> "Odoo" -> "IKERP" and favicon -->
+    <template id="ikerp_layout" inherit_id="web.layout" name="IKERP Layout">
+        <xpath expr="//title" position="replace">
+            <title t-esc="title or 'IKERP'"/>
+        </xpath>
+        <xpath expr="//link[@rel='shortcut icon']" position="replace">
+            <link type="image/png" rel="shortcut icon"
+                  t-att-href="x_icon or '/ikerp_base/static/description/icon.png'"/>
+        </xpath>
+    </template>
+
+    <!-- "Powered by Odoo" footer at brand_promotion_message -->
+    <template id="ikerp_brand_promotion_message"
+              inherit_id="web.brand_promotion_message"
+              name="IKERP Brand Promotion Message">
+        <xpath expr="//t[@t-set='odoo_logo']" position="replace">
+            <t t-set="odoo_logo">
+                <span class="badge text-bg-light">
+                    <img alt="IKERP"
+                         src="/ikerp_base/static/description/banner.png"
+                         style="width: auto; height: 1em; vertical-align: baseline;"/>
+                </span>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Login page: "Powered by Odoo" -> "Powered by IKERP" -->
+    <template id="ikerp_login_layout" inherit_id="web.login_layout" name="IKERP Login Layout">
+        <xpath expr="//a[contains(@href, 'odoo.com')]" position="replace">
+            <span>Powered by <span>IKERP</span></span>
+        </xpath>
+    </template>
+
+    <!-- Webclient bootstrap apple-touch-icon -->
+    <template id="ikerp_webclient_bootstrap"
+              inherit_id="web.webclient_bootstrap"
+              name="IKERP Webclient Bootstrap">
+        <xpath expr="//link[@rel='apple-touch-icon']" position="attributes">
+            <attribute name="href">/ikerp_base/static/description/icon.png</attribute>
+        </xpath>
+    </template>
+
+    <!-- Offline page -->
+    <template id="ikerp_webclient_offline"
+              inherit_id="web.webclient_offline"
+              name="IKERP Webclient Offline">
+        <xpath expr="//div[hasclass('card')]/img" position="attributes">
+            <attribute name="alt">IKERP logo</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('card')]/p" position="replace">
+            <p>Check your network connection and come back here. IKERP will load as soon as you're back online.</p>
+        </xpath>
+    </template>
+
+</odoo>
