@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="ikerp_base.NavBar.AppsMenu_inherit"
+       t-inherit="web.NavBar.AppsMenu"
+       t-inherit-mode="extension">
+        <xpath expr="//a[@href='/odoo']" position="attributes">
+            <attribute name="href">/ikerp</attribute>
+        </xpath>
+    </t>
+
+    <t t-name="ikerp_base.NavBar.AppsMenu.Sidebar_inherit"
+       t-inherit="web.NavBar.AppsMenu.Sidebar"
+       t-inherit-mode="extension">
+        <xpath expr="//a[@href='/odoo']" position="attributes">
+            <attribute name="href">/ikerp</attribute>
+        </xpath>
+    </t>
+
+</templates>
